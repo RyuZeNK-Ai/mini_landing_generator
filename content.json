@@ -1,10 +1,14 @@
 {
- "title": "Inkvibe - Tu app de tatuajes",
-    "description": "Descubre artistas, estilos y precios cerca de ti. Conecta, reserva y paga desde la app.",
-    "cta": "Únete a la waitlist",
-    "socials": "<a href='https://www.linkedin.com/company/inkvibe-app/'>LinkedIn</a> | <a href='#'>Instagram</a>",
-    "background": "linear-gradient(135deg, #4B0000, #000000)",
-    "textColor": "white",
-    "buttonColor": "#FF4500",
-    "buttonHover": "#FF6347"
+  "title": "Inkvibe - Tu app de tatuajes",
+  "description": "Descubre artistas, estilos y precios cerca de ti. Conecta, reserva y paga desde la app.",
+  "cta": "Únete a la waitlist",
+  "logoAlt": "Inkvibe Logo - App de tatuajes",
+  "socials": "<a href='https://www.linkedin.com/company/inkvibe-app/' target='_blank' rel='noopener noreferrer'>LinkedIn</a> <span>|</span> <a href='#' target='_blank' rel='noopener noreferrer'>Instagram</a>",
+  "textColor": "white",
+  "buttonColor": "#FF4500",
+  "buttonHover": "#FF6347",
+  "bgImage": "tattoo-bg.png",
+  "popupMessage": "¡Solicitud enviada! Te avisaremos pronto.",
+  "errorMessage": "Ingresa un correo válido: gmail.com, hotmail.com o yahoo.com",
+  "validDomains": "['gmail.com', 'hotmail.com', 'yahoo.com']"
 }
