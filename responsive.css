@@ -23,9 +23,14 @@
 /* ---------- Ultra small móviles < 350px ---------- */
 @media (max-width: 350px) {
   html, body {
-    overflow-x: hidden;
-    width: 100%;
-    position: relative;
+    overflow: hidden;
+    height: 100%;
+  }
+
+  body {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    height: 100dvh;
   }
 
   body::before {
@@ -60,6 +65,8 @@
     gap: 12px;
     padding: 16px;
     width: 95%;
+    min-height: auto;
+    justify-content: center;
   }
 
   .hero h1 {
@@ -104,9 +111,14 @@
 /* ---------- Móviles normales < 768px (CON respiración por opacidad) ---------- */
 @media (max-width: 768px) {
   html, body {
-    overflow-x: hidden;
-    width: 100%;
-    position: relative;
+    overflow: hidden;
+    height: 100%;
+  }
+
+  body {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    height: 100dvh;
   }
 
   body::before {
@@ -146,6 +158,8 @@
     margin: 0 auto;
     position: relative;
     z-index: 1;
+    min-height: auto;
+    justify-content: center;
   }
 
   .hero h1 {
