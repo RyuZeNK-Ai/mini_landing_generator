@@ -1,62 +1,77 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Inkvibe - Descubre artistas, estilos y precios cerca de ti. Conecta, reserva y paga desde la app.">
   <title>Inkvibe - Tu app de tatuajes</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="responsive.css">
 </head>
 <body>
   <div class="hero">
     <!-- Logo arriba del título -->
-    <img src="logo.png" alt="Inkvibe Logo" class="logo">
+    <img src="logo.png" alt="Inkvibe Logo - App de tatuajes" class="logo">
 
     <h1>Inkvibe - Tu app de tatuajes</h1>
     <p>Descubre artistas, estilos y precios cerca de ti. Conecta, reserva y paga desde la app.</p>
 
-    <form id="waitlist-form">
+    <form id="waitlist-form" action="/" method="post" netlify>
       <div class="input-container">
-        <input type="email" placeholder="Tu correo" required>
+        <label for="email" class="visually-hidden">Correo electrónico</label>
+        <input type="email" id="email" name="email" placeholder="Tu correo" required aria-label="Correo electrónico para unirte a la waitlist">
       </div>
       <button type="submit">Únete a la waitlist</button>
     </form>
 
     <div class="socials">
-      <a href='https://www.linkedin.com/company/inkvibe-app/'>LinkedIn</a> | <a href='#'>Instagram</a>
+      <a href="https://www.linkedin.com/company/inkvibe-app/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <span>|</span>
+      <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
     </div>
   </div>
-<script>
-      const form = document.getElementById('waitlist-form');
-      if(form){
-        const emailInput = form.querySelector('input[type="email"]');
 
-        // Crear popup
-        let popup = document.getElementById('popup');
-        if(!popup){
-          popup = document.createElement('div');
-          popup.id = 'popup';
-          popup.textContent = 'Solicitud enviada';
-          document.body.appendChild(popup);
+  <script>
+    (function() {
+      const form = document.getElementById('waitlist-form');
+      if (!form) return;
+
+      const emailInput = document.getElementById('email');
+
+      // Crear popup si no existe
+      let popup = document.getElementById('popup');
+      if (!popup) {
+        popup = document.createElement('div');
+        popup.id = 'popup';
+        popup.textContent = '¡Solicitud enviada! Te avisaremos pronto.';
+        document.body.appendChild(popup);
+      }
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const email = emailInput.value.trim().toLowerCase();
+        const validDomains = ['gmail.com', 'hotmail.com', 'yahoo.com'];
+        const parts = email.split('@');
+
+        if (parts.length !== 2 || !validDomains.includes(parts[1])) {
+          alert('Ingresa un correo válido: gmail.com, hotmail.com o yahoo.com');
+          return;
         }
 
-        form.addEventListener('submit', function(e){
-          e.preventDefault();
-          const email = emailInput.value.trim().toLowerCase();
-          const validDomains = ['gmail.com', 'hotmail.com', 'yahoo.com'];
-          const parts = email.split('@');
+        // Mostrar popup
+        popup.style.display = 'block';
+        setTimeout(function() {
+          popup.style.display = 'none';
+        }, 2000);
 
-          if(parts.length !== 2 || !validDomains.includes(parts[1])){
-            alert('Ingresa un correo válido: gmail.com, hotmail.com o yahoo.com');
-            return;
-          }
-
-          // Mostrar popup
-          popup.style.display = 'block';
-          setTimeout(() => { popup.style.display = 'none'; }, 2000);
-
-          // Limpiar input
-          emailInput.value = '';
-        });
-      }
-    </script></body>
+        // Limpiar input
+        emailInput.value = '';
+        
+        // Aquí podrías enviar el formulario a un endpoint real
+        // form.submit(); // descomentar si tienes backend
+      });
+    })();
+  </script>
+</body>
 </html>
