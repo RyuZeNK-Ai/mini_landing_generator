@@ -4,7 +4,7 @@
 
 <div align="center">
 
-[![🚀 Ingresar a la Web](https://img.shields.io/badge/Ingresar_Web-28a745?style=for-the-badge&logo=github&logoColor=white)](https://ryuzenk-ai.github.io/landing-generator/)
+[![🚀 Ingresar a la Web](https://img.shields.io/badge/Ingresar_Web-28a745?style=for-the-badge&logo=github&logoColor=white)](https://ryuzenk-ai.github.io/mini_landing_generator/)
 
 </div>
 
