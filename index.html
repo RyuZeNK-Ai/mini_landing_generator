@@ -1,0 +1,29 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>{{TITLE}}</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="hero">
+    <!-- Logo arriba del título -->
+    <img src="logo.png" alt="Inkvibe Logo" class="logo">
+
+    <h1>{{TITLE}}</h1>
+    <p>{{DESCRIPTION}}</p>
+
+    <form id="waitlist-form">
+      <div class="input-container">
+        <input type="email" placeholder="Tu correo" required>
+      </div>
+      <button type="submit">{{CTA}}</button>
+    </form>
+
+    <div class="socials">
+      {{SOCIALS}}
+    </div>
+  </div>
+</body>
+</html>
